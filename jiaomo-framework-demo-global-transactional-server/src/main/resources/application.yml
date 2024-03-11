@@ -1,0 +1,50 @@
+server:
+    shutdown: graceful
+    port: 8762
+
+logging:
+    config: classpath:log4j2.xml
+
+spring:
+    application:
+        name: @project.artifactId@
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
+        default-property-inclusion: non_null
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3396/houyi_sso?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false
+        username: houyi
+        password: yEUBnwAG39LrCmP8
+
+eureka:
+    instance:
+        lease-renewal-interval-in-seconds: 5
+        lease-expiration-duration-in-seconds: 15
+    client:
+        enabled: true
+        instance-info-replication-interval-seconds: 5
+        healthcheck:
+            enabled: true
+        service-url:
+            default-zone: http://127.0.0.1:8761/eureka
+
+feign:
+    client:
+        config:
+            default:
+                connect-timeout: 5000
+                read-timeout: 60000
+    okhttp:
+        enabled: true
+    httpclient:
+        enabled: false
+        max-connections: 200
+        time-to-live: 60
+        time-to-live-unit: SECONDS
+
+metrics:
+    enabled: false
+    report:
+        output-file: metrics_${spring.application.name}

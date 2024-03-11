@@ -1,0 +1,31 @@
+server:
+    port: 8761
+    shutdown: graceful
+
+eureka:
+    instance:
+        hostname: ${spring.cloud.client.ip-address}
+        instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+        prefer-ip-address: true
+        lease-renewal-interval-in-seconds: 5
+        lease-expiration-duration-in-seconds: 15
+    server:
+        enable-self-preservation: true
+        eviction-interval-timer-in-ms: 15000
+    client:
+        instance-info-replication-interval-seconds: 5
+        register-with-eureka: false
+        fetch-registry: false
+        service-url:
+            default-zone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+spring:
+    application:
+        name: @project.artifactId@
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
+        default-property-inclusion: non_null
+
+logging:
+    config: classpath:log4j2.xml
