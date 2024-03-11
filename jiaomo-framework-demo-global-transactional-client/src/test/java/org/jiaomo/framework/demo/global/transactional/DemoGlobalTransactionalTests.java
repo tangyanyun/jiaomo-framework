@@ -43,9 +43,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /// 测试请首先启动如下服务：
-/// 1.yuanqi-framework-demo-global-transactional-eureka
-/// 2.yuanqi-framework-demo-global-transactional-server
-/// 3.yuanqi-framework-demo-global-transactional-client
+/// 1.jiaomo-framework-demo-global-transactional-eureka
+/// 2.jiaomo-framework-demo-global-transactional-server
+/// 3.jiaomo-framework-demo-global-transactional-client
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {DemoGlobalTransactionalClientApplication.class})
