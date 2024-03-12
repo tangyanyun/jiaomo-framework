@@ -25,9 +25,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
 /**
- * @author 唐燕云 tangyanyun
- * @email tangyanyun@sina.com
- * @date 2023-08-26
+ * @author tangyanyun
+ * {@code @email} tangyanyun@sina.com
+ * {@code @date} 2023-08-26
  */
 
 public class ApplicationContextHolder implements ApplicationContextAware {
