@@ -35,7 +35,6 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-//@MapperScan("com.gientech.product.yuanqi.framework.autoconfigure.global.transactional.mybatis.mapper")
 public class GlobalTransactionalMybatisAutoConfiguration {
     @Bean
     @ConditionalOnClass(value = {TxAutonomousService.class})
