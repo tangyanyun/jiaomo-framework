@@ -32,9 +32,9 @@ import org.apache.commons.io.FileUtils;
 import javax.annotation.PostConstruct;
 
 /**
- * @author 唐燕云 tangyanyun
- * @email tangyanyun@sina.com
- * @date 2023-08-26
+ * @author tangyanyun
+ * {@code @email} tangyanyun@sina.com
+ * {@code @date} 2023-08-26
  */
 
 @Slf4j

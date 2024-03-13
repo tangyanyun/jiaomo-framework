@@ -18,19 +18,12 @@ package org.jiaomo.framework.autoconfigure.metrics;
 
 
 import org.jiaomo.framework.autoconfigure.metrics.adapter.MetricsAdapter;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author 唐燕云 tangyanyun
- * @email tangyanyun@sina.com
- * @date 2023-08-26
- */
 
-@Slf4j
 @Configuration
 public class MetricsAutoConfiguration {
     @Bean
