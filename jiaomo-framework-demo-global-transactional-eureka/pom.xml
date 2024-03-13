@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.jiaomo.framework</groupId>
         <artifactId>jiaomo-framework-parent</artifactId>
-        <relativePath>..</relativePath>
+        <relativePath>../pom.xml</relativePath>
         <version>1.0.0</version>
     </parent>
 
