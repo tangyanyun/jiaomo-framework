@@ -24,7 +24,6 @@ import org.jiaomo.framework.autoconfigure.metrics.adapter.MetricsAdapter;
 import org.jiaomo.framework.commons.exception.BusinessException;
 import org.jiaomo.framework.commons.function.ThrowingRunnable;
 import org.jiaomo.framework.commons.function.ThrowingSupplier;
-import org.jiaomo.framework.commons.jackson.JsonJacksonSerializer;
 import org.jiaomo.framework.demo.global.transactional.service.application.DemoLocalApplicationService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
@@ -43,7 +42,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /// 测试请首先启动如下服务：
-/// 1.jiaomo-framework-demo-global-transactional-eureka
+/// 1.jiaomo-framework-demo-eureka
 /// 2.jiaomo-framework-demo-global-transactional-server
 /// 3.jiaomo-framework-demo-global-transactional-client
 
@@ -150,7 +149,8 @@ public class DemoGlobalTransactionalTests {
 	//本地 ApplicationService具有 @GlobalTransactional 注解，DomainService 和 LocalDomainService 实现类的方法上使用 @AutonomousTransactional 注解
 	//1.demoLocalApplicationService.tx01WithAnnotation(本地ApplicationService) 使用 @GlobalTransactional
 	//2.demoGlobalTransactionalFacade.tccTry 调用 demoGlobalTransactionalDomainService.tccTryWithAnnotation,其具有 @AutonomousTransactional，Facade上无分布式事务注解
-	//3.demoLocalDomainService.tryTxWithAnnotation 具有 @AutonomousTransactional	@Test
+	//3.demoLocalDomainService.tryTxWithAnnotation 具有 @AutonomousTransactional
+	@Test
 	public void test04() {
 		jdbcTemplate.update("delete from tx_demo where account_number = ?",ACCOUNT_NUMBER);
 		Timer.Context time = MetricsAdapter.time("DemoGlobalTransactionalTests.test04");

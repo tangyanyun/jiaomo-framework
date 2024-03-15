@@ -20,7 +20,6 @@ package org.jiaomo.framework.autoconfigure.global.transactional.interceptor;
 import com.codahale.metrics.Timer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jiaomo.framework.autoconfigure.global.transactional.domain.TxContext;
-import org.jiaomo.framework.autoconfigure.global.transactional.listener.AutonomousTransactionalListener;
 import org.jiaomo.framework.autoconfigure.metrics.adapter.MetricsAdapter;
 import org.jiaomo.framework.autoconfigure.global.transactional.visitor.TxContextVisitor;
 import org.jiaomo.framework.autoconfigure.global.transactional.domain.TxStatusEnum;

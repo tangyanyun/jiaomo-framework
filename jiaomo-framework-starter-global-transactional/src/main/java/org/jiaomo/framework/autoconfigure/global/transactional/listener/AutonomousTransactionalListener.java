@@ -10,18 +10,14 @@ public interface AutonomousTransactionalListener {
     }
 
     default void onAutonomousTransactionCommit(TxContext.AutonomousContext autonomousContext) {
-
     }
     default void onAutonomousTransactionCommitComplete(TxContext.AutonomousContext autonomousContext) {
-
     }
 
     default void onAutonomousTransactionCommitException(TxContext.AutonomousContext autonomousContext,Throwable throwable) {
-
     }
 
     default void onAutonomousTransactionRollback(TxContext.AutonomousContext autonomousContext) {
-
     }
 
     default void onAutonomousTransactionRollbackComplete(TxContext.AutonomousContext autonomousContext) {
@@ -29,6 +25,5 @@ public interface AutonomousTransactionalListener {
     }
 
     default void onAutonomousTransactionRollbackException(TxContext.AutonomousContext autonomousContext,Throwable throwable) {
-
     }
 }

@@ -24,8 +24,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @EnableCaching
 @SpringBootApplication
 @EnableEurekaServer
-public class DemoGlobalTransactionalEurekaApplication {
+public class DemoEurekaApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DemoGlobalTransactionalEurekaApplication.class, args);
+        SpringApplication.run(DemoEurekaApplication.class, args);
     }
 }

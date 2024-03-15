@@ -11,7 +11,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>jiaomo-framework-demo-global-transactional-eureka</artifactId>
+    <artifactId>jiaomo-framework-demo-eureka</artifactId>
 
     <dependencies>
         <dependency>

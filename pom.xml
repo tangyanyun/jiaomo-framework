@@ -20,11 +20,14 @@
 
 		<module>jiaomo-framework-starter-application-context-holder</module>
 		<module>jiaomo-framework-starter-metrics</module>
+
 		<module>jiaomo-framework-global-transactional-annotation</module>
 		<module>jiaomo-framework-starter-global-transactional-persistent-mysql</module>
 		<module>jiaomo-framework-starter-global-transactional</module>
+
+		<module>jiaomo-framework-demo-eureka</module>
+
 		<module>jiaomo-framework-facade-demo-global-transactional</module>
-		<module>jiaomo-framework-demo-global-transactional-eureka</module>
 		<module>jiaomo-framework-demo-global-transactional-server</module>
 		<module>jiaomo-framework-demo-global-transactional-client</module>
 	</modules>
