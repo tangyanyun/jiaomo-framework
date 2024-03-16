@@ -210,7 +210,7 @@ public class TxContextVisitorImpl implements TxContextVisitor<TxContextVisitorIm
 
             if (txBase instanceof TxContext.AutonomousContext) {
                 TxContext.AutonomousContext autonomousContext = (TxContext.AutonomousContext) txBase;
-                if (autonomousContext.getTargetObject() == null)
+                if (autonomousContext.getTargetObject() == null && StringUtils.isNotBlank(autonomousContext.getAutonomous().getCommitMethod()))
                     globalTransactionalService.commit(txContext.getGlobal().getApplicationName(),txContext.getUnitCode(),autonomousContext);
                 else
                     commit(txContext.getGlobal().getApplicationName(),txContext.getUnitCode(),autonomousContext);
