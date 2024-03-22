@@ -17,12 +17,14 @@
 package org.jiaomo.framework.autoconfigure.global.transactional.mybatis;
 
 
+import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.mapper.TxGlobalMapper;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.TxAutonomousService;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.TxContextService;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.TxGlobalService;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.impl.TxAutonomousServiceImpl;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.impl.TxContextServiceImpl;
 import org.jiaomo.framework.autoconfigure.global.transactional.mybatis.service.impl.TxGlobalServiceImpl;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -35,6 +37,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@MapperScan(basePackageClasses = {TxGlobalMapper.class})
 public class GlobalTransactionalMybatisAutoConfiguration {
     @Bean
     @ConditionalOnClass(value = {TxAutonomousService.class})
