@@ -31,6 +31,7 @@ public interface ThrowingSupplier<T,E extends Exception> {
             } catch (Exception e) {
                 log.debug("toSupplier isThrowing:{} {} {}",isThrowing,e.getClass().getName(),e.getMessage());
                 if (isThrowing) {
+//                  return ThrowingFunction.sneakyThrow(e);
                     throw e instanceof BusinessException ? (BusinessException)e : new BusinessException(e);
                 } else {
                     log.trace(e.getMessage(),e);

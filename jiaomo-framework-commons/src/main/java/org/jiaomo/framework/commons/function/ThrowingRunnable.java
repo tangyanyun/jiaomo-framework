@@ -29,8 +29,8 @@ public interface ThrowingRunnable<E extends Exception> {
             } catch (Exception e) {
                 log.debug("toRunnable isThrowing:{} {} {}",isThrowing,e.getClass().getName(),e.getMessage());
                 if (isThrowing) {
+//                  ThrowingFunction.sneakyThrow(e);
                     throw e instanceof BusinessException ? (BusinessException)e : new BusinessException(e);
-//                  ThrowingFunction.<RuntimeException>sneakyThrow(e);
                 } else {
                     log.trace(e.getMessage(),e);
                 }

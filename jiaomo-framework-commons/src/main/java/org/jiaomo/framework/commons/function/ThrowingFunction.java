@@ -31,6 +31,7 @@ public interface ThrowingFunction<T,R,E extends Exception> {
             } catch (Exception e) {
                 log.debug("toFunction isThrowing:{} {} {}",isThrowing,e.getClass().getName(),e.getMessage());
                 if (isThrowing) {
+//                  return sneakyThrow(e);
                     throw e instanceof BusinessException ? (BusinessException)e : new BusinessException(e);
                 } else {
                     log.trace(e.getMessage(),e);
@@ -47,9 +48,13 @@ public interface ThrowingFunction<T,R,E extends Exception> {
         return toFunctionWithoutThrowing(throwingFunction).apply(t);
     }
 
+    static <T> T sneakyThrow(Throwable t) {
+        return typeErasure(t);
+    }
+
     @SuppressWarnings("unchecked")
-    static <T extends Throwable> T sneakyThrow(Throwable t) throws T {
-        throw (T)t;
+    static <T,E extends Throwable> T typeErasure(Throwable throwable) throws E {
+        throw (E)throwable;
     }
 
     @SuppressWarnings("unchecked")

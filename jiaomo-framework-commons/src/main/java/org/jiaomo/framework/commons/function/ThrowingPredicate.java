@@ -31,6 +31,8 @@ public interface ThrowingPredicate<T,E extends Exception> {
             } catch (Exception e) {
                 log.debug("toPredicate isThrowing:{} withoutThrowingDefaultReturnValue:{} {} {}",isThrowing,withoutThrowingDefaultReturnValue,e.getClass().getName(),e.getMessage());
                 if (isThrowing) {
+//                  ThrowingFunction.sneakyThrow(e);
+//                  return withoutThrowingDefaultReturnValue;
                     throw e instanceof BusinessException ? (BusinessException)e : new BusinessException(e);
                 } else {
                     log.trace(e.getMessage(),e);
